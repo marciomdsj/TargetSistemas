@@ -1,0 +1,54 @@
+3) Observe o trecho de código abaixo: 
+int INDICE = 12, SOMA = 0, K = 1; 
+enquanto K < INDICE 
+    faça { K = K + 1; SOMA = SOMA + K; } 
+        imprimir(SOMA);
+
+Ao final do processamento, qual será o valor da variável SOMA?
+
+Resposta: Ao final do processamento, SOMA será 77. Fazendo em C, o pseudo-código ficaria assim:
+int indice = 3, soma = 0, k = 1;
+        while(k < indice){
+            k = k + 1;
+            soma = soma + k;
+        }
+        printf("%d", soma);
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+4) Descubra a lógica e complete o próximo elemento:
+a) 1, 3, 5, 7, 9
+b) 2, 4, 8, 16, 32, 64, 128
+c) 0, 1, 4, 9, 16, 25, 36, 49
+d) 4, 16, 36, 64, 100
+e) 1, 1, 2, 3, 5, 8, 13
+f) 2,10, 12, 16, 17, 18, 19, ___. **Não consegui fazer a f)**
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+5) Você está em uma sala com três interruptores, cada um conectado a uma lâmpada em salas diferentes. 
+Você não pode ver as lâmpadas da sala em que está, mas pode ligar e desligar os interruptores quantas vezes quiser. 
+Seu objetivo é descobrir qual interruptor controla qual lâmpada. Como você faria para descobrir, usando apenas duas idas até 
+uma das salas das lâmpadas, qual interruptor controla cada lâmpada?  
+
+Resposta: Pense a sala como um quadrado, em que em um dos lados está você, e nos outros 3 estão os 3 interruptores, 
+com suas salas em seus lados respectivos Falando em forma de pseudo-código, pensei assim: 
+    Ligar interruptor do lado esquerdo e olhar a sala da direita.
+        Se a sala da direita estiver com a luz acesa
+            1- sabemos que a luz da esquerda controla a da direita; 
+            2- Basta ligar a luz da direita, e conferir na sala da esquerda, se estiver aceso, o interruptor da direita controla a sala da esquerda e o interruptor da frente controla a sala da frente;
+            3- Se ela não estiver acesa, quer dizer que o interruptor da direita controla a lâmpada da sala da frente, e vice-versa;
+        Se a sala da direita não estiver com a luz acesa
+            1- Sabemos que o interruptor da esquerda NÃO controla a sala da direita;
+            2- Desligar o interruptor da esquerda, e ligar o da direita, por fim, olhar a sala da frente (última observação disponível)
+                Se a sala da frente estiver com a luz ligada
+                    1- Sabemos que o interruptor da direita controla a sala da frente;
+                    2- Como o interruptor da esquerda não controla a sala da frente, nem a da direita, ele controla a da sala da esquerda;
+                    3- Por fim, o interruptor da frente controla a sala à direita.
+                Se a sala da frente estiver com a luz desligada
+                    1- Você apenas sabe que a da direita não controla a da sala da frente, e que o interruptor da esquerda não controla a sala da direita;
+                    2- Portanto, o interruptor da direita pode tanto controlar a luz da sala da direita, quanto da esquerda, o interruptor da esquerda
+                    poderá controlar tanto o da esquerda quanto a de cima, e o interruptor de cima poderá controlar a sala da direita e a da esquerda e a de cima.
+Em resumo, cheguei até aqui depois de uma hora e não encontrei nenhuma solução.
+
+
